@@ -53,8 +53,8 @@ app.get('/restaurants/', (req, res) => {
 
 //mealtype
 
-app.get('/mealtype', (req, res) => {
-    db.collection('mealtype').find().toArray((err, result) => {
+app.get('/quicksearch', (req, res) => {
+    db.collection('quicksearch').find().toArray((err, result) => {
         if (err) throw err;
         res.send(result)
     })
