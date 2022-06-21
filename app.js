@@ -7,7 +7,8 @@ dotenv.config()
 let port = process.env.PORT || 8230;
 //const mongoUrl = "mongodb://localhost:27017";
 //const mongoUrl = "mongodb+srv://local:test1234@cluster0.f8vmc.mongodb.net/zomato?retryWrites=true&w=majority";
-const mongoUrl = "mongodb+srv://local:test12345@cluster0.f8vmc.mongodb.net/augintern?retryWrites=true&w=majority";
+//const mongoUrl = "mongodb+srv://local:test12345@cluster0.f8vmc.mongodb.net/augintern?retryWrites=true&w=majority";
+const mongoUrl = "mongodb+srv://test:test123@cluster0.rszfc.mongodb.net/zomato?retryWrites=true&w=majority";
 const bodyParser = require('body-parser');
 const cors = require('cors');
 //const token = "8fbf8tyyt87378";
@@ -185,7 +186,7 @@ app.put('/updateOrder/:id', (req, res) => {
 // Connection with db
 MongoClient.connect(mongoUrl, (err, client) => {
     if (err) console.log(`Error while connecting`);
-    db = client.db('augintern');
+    db = client.db('zomato');
     app.listen(port, () => {
         console.log(`Server is running on port ${port}`)
     })
